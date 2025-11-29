@@ -11,14 +11,7 @@ def test_tc_01_001_01(page):
     page.goto("/")
 
     """Сохраненные переменные"""
-    username = "denis"
-    password = "denis"
     new_item_name = f"denis-{random.randint(0, 9999999)}"
-
-    """Локаторы страницы логинки"""
-    username_field_loc = "input[id='j_username']"
-    password_field_loc = "input[id='j_password']"
-    submit_btn_loc = "button[name='Submit']"
 
     """Локатор для кнопки + new item"""
     new_item_btn_loc = "a[href='/view/all/newJob']"
@@ -33,11 +26,6 @@ def test_tc_01_001_01(page):
 
     """Локатор для созданного item"""
     created_item_loc = lambda name: f"td > a[href='job/{name}/']"
-
-    """Страница логинки"""
-    page.locator(username_field_loc).fill(username)
-    page.locator(password_field_loc).fill(password)
-    page.locator(submit_btn_loc).click()
 
     """Клик по кнопке + new item"""
     page.locator(new_item_btn_loc).click()
