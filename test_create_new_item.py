@@ -1,6 +1,7 @@
 import random
 import time
 
+
 def get_name_loc(name):
     return f"td > a[href='job/{name}/']"
 
