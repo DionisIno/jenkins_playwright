@@ -35,8 +35,6 @@ def get_cookies(playwright: Playwright):
     browser.close()
     return cookies
 
-
-
 @pytest.fixture
 def page(playwright: Playwright, get_cookies):
     browser = playwright.chromium.launch(headless=False, slow_mo=500)
